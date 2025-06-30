@@ -1,1 +1,953 @@
-<!DOCTYPE html><html><head><title>DRIFTFORCE AI v24</title><script src="https://unpkg.com/react@18/umd/react.development.js"></script><script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script><script src="https://cdn.tailwindcss.com"></script></head><body><div id="root"></div><script>const{createElement:h,useState,useEffect}=React;const DriftForce=()=>{const[isLoggedIn,setIsLoggedIn]=useState(!1);const[loginData,setLoginData]=useState({username:"",password:""});const[activeTab,setActiveTab]=useState("drift-analysis");const[metrics,setMetrics]=useState({scanRate:4230,detectionLatency:3.8,resources:53e3,activeDrifts:2,configsPerSec:16327,anomalyScore:9.7,preventedLoss:95.1,accuracy:99.97});const[threatMatrix,setThreatMatrix]=useState({critical:2,warning:0,resolved:299,scanning:1267});const handleLogin=()=>setIsLoggedIn(!0);const handleFounderAccess=()=>setIsLoggedIn(!0);if(!isLoggedIn)return h("div",{className:"min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 flex items-center justify-center p-4"},h("div",{className:"bg-gray-800/80 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 w-full max-w-md shadow-2xl"},h("div",{className:"text-center mb-8"},h("div",{className:"w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center text-black font-bold text-2xl mx-auto mb-4 shadow-lg"},"DF"),h("h1",{className:"text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"},"DRIFTFORCE"),h("p",{className:"text-gray-400 mt-2"},"The Ultimate Data Drift & Prediction Platform")),h("div",{className:"space-y-6"},h("div",{},h("label",{className:"block text-sm font-medium text-gray-300 mb-2"},"Username"),h("input",{type:"text",value:loginData.username,onChange:e=>setLoginData({...loginData,username:e.target.value}),className:"w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white",placeholder:"Enter username"})),h("div",{},h("label",{className:"block text-sm font-medium text-gray-300 mb-2"},"Password"),h("input",{type:"password",value:loginData.password,onChange:e=>setLoginData({...loginData,password:e.target.value}),className:"w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white",placeholder:"Enter password"})),h("button",{onClick:handleLogin,className:"w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold py-3 px-6 rounded-lg"},"ACCESS DRIFTFORCE")),h("div",{className:"mt-6 text-center"},h("p",{className:"text-gray-500 text-sm mb-4"},"Demo Credentials: admin / password"),h("button",{onClick:handleFounderAccess,className:"px-8 py-3 bg-gradient-to-r from-amber-400 to-amber-600 text-black rounded-lg font-bold"},"VIP ACCESS"))));return h("div",{className:"min-h-screen bg-gray-900 text-white font-mono flex flex-col"},h("div",{className:"bg-gradient-to-r from-gray-800 to-gray-900 border-b border-gray-700/50 p-3"},h("div",{className:"flex items-center justify-between"},h("div",{className:"flex items-center space-x-3"},h("div",{className:"w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center text-black font-bold"},"DF"),h("h1",{className:"text-xl font-bold"},"DRIFTFORCE"),h("span",{className:"text-green-400 text-xs"},"SYSTEM OPERATIONAL")),h("div",{className:"flex items-center space-x-4 text-xs"},h("div",{className:"bg-gray-700/50 p-2 rounded-lg"},h("div",{className:"text-gray-400"},"SCAN"),h("div",{className:"text-cyan-400 font-bold"},metrics.scanRate+"/s")),h("div",{className:"bg-gray-700/50 p-2 rounded-lg"},h("div",{className:"text-gray-400"},"LATENCY"),h("div",{className:"text-cyan-400 font-bold"},metrics.detectionLatency+"ms")),h("div",{className:"bg-gray-700/50 p-2 rounded-lg"},h("div",{className:"text-gray-400"},"RESOURCES"),h("div",{className:"text-cyan-400 font-bold"},metrics.resources.toLocaleString())),h("div",{className:"bg-gray-700/50 p-2 rounded-lg"},h("div",{className:"text-gray-400"},"DRIFTS"),h("div",{className:"text-cyan-400 font-bold"},metrics.activeDrifts))),h("div",{className:"flex items-center space-x-3"},h("button",{className:"px-4 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 text-black rounded-lg text-sm font-bold"},"LIVE"),h("button",{className:"px-4 py-2 rounded-lg border-2 border-red-500 text-red-500 text-sm font-bold"},"EMERGENCY"),h("span",{className:"text-yellow-400 text-sm font-bold"},"3"),h("button",{className:"px-3 py-2 bg-gray-700 rounded-lg text-sm"},"VIP")))),h("div",{className:"flex-1 p-6"},h("div",{className:"text-green-400 mb-4 font-mono text-sm"},"# DRIFT DETECTION ENGINE V3.2.1 - ANALYZING DATA PATTERNS"),h("div",{className:"bg-red-500/20 border border-red-500 rounded-2xl p-6 font-mono text-sm mb-4"},h("div",{className:"flex items-center justify-between mb-4"},h("div",{className:"flex items-center space-x-3"},h("span",{className:"text-blue-400"},"class"),h("span",{className:"text-yellow-400 font-bold text-lg"},"prod-db-cluster-primary"),h("span",{className:"text-red-400 px-3 py-1 rounded-lg bg-gray-800/60 text-xs font-bold"},"CRITICAL"))),h("div",{className:"text-gray-300 mb-4"},h("span",{className:"text-purple-400"},"description = "),h("span",{className:"text-green-400"},Database replication configuration drift detected)),h("div",{className:"text-orange-400"},"Impact: $47K/hour at risk")),h("div",{className:"grid grid-cols-2 gap-4 mt-8"},h("div",{className:"bg-red-900/50 p-4 rounded-xl text-center border border-red-500/30"},h("div",{className:"text-3xl text-red-400 font-bold"},threatMatrix.critical),h("div",{className:"text-gray-400"},"CRITICAL")),h("div",{className:"bg-green-900/50 p-4 rounded-xl text-center border border-green-500/30"},h("div",{className:"text-3xl text-green-400 font-bold"},threatMatrix.resolved),h("div",{className:"text-gray-400"},"RESOLVED")))),h("div",{className:"fixed bottom-0 right-0 p-4"},h("button",{onClick:()=>alert("TEMPORAL STATE MATRIX™ DRIFT DETECTION ENGINE\n\nEntropy Index: 0.224\nNodes/Sec: 9,746\nDrift Probability: 27%\n\nALGORITHM STATUS\nState Vectors: 952\nQuantum Entropy: 0.6316\nTemporal Variance: 0.084610\nPatent Status: PENDING US-2024-DFT-001"),className:"bg-green-500 text-black px-6 py-3 rounded-lg font-bold shadow-lg hover:bg-green-400"},"MATRIX")))};const root=ReactDOM.createRoot(document.getElementById("root"));root.render(React.createElement(DriftForce));</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriftForce AI - Data Drift Detection Platform</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+const DriftForce = () => {
+const [isAnalyzing, setIsAnalyzing] = React.useState(true);
+const [systemStatus, setSystemStatus] = React.useState('OPERATIONAL');
+const [liveMode, setLiveMode] = React.useState(true);
+const [emergencyMode, setEmergencyMode] = React.useState(false);
+const [showBackendConfig, setShowBackendConfig] = React.useState(false);
+const [activeTab, setActiveTab] = React.useState('drift-analysis');
+const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+const [loginData, setLoginData] = React.useState({ username: '', password: '' });
+const [userRole, setUserRole] = React.useState('admin');
+const [notifications, setNotifications] = React.useState(3);
+const [autoRemediate, setAutoRemediate] = React.useState(true);
+const [remediationInProgress, setRemediationInProgress] = React.useState({});
+const [remediationComplete, setRemediationComplete] = React.useState({});
+const [selectedDrift, setSelectedDrift] = React.useState(null);
+const [showPassword, setShowPassword] = React.useState(false);
+const [founderAccess, setFounderAccess] = React.useState(false);
+
+// Real-time metrics that update
+const [metrics, setMetrics] = React.useState({
+scanRate: 4172,
+detectionLatency: 3.8,
+resources: 53000,
+activeDrifts: 2,
+configsPerSec: 16072,
+anomalyScore: 9.3,
+preventedLoss: 93.9,
+accuracy: 99.97,
+falsePositive: 0.03,
+avgMttr: 1.2
+});
+
+const [threatMatrix, setThreatMatrix] = React.useState({
+critical: 2,
+warning: 0,
+resolved: 299,
+scanning: 1267
+});
+
+const [driftAnalysis] = React.useState([
+{
+id: 'DFT-1751171376509',
+name: 'k8s-prod-cluster',
+description: 'Resource limits removed from production deployments',
+service: 'Kubernetes 1.27',
+firstSeen: 'just now',
+impact: '$10K/day waste',
+affected: '2 services',
+severity: 'WARNING',
+type: 'ONGOING',
+autoFix: 'AVAILABLE'
+},
+{
+id: 'DFT-2024-0847',
+name: 'prod-db-cluster-primary',
+description: 'Database replication configuration drift detected',
+service: 'PostgreSQL 14.2',
+firstSeen: '2 minutes ago',
+impact: '$47K/hour at risk',
+affected: '3 services',
+severity: 'CRITICAL',
+type: 'ONGOING',
+autoFix: 'AVAILABLE'
+},
+{
+id: 'DFT-2024-0848',
+name: 'api-gateway-sg-primary',
+description: 'Security configuration drift in API gateway',
+service: 'Kong Gateway 3.1',
+firstSeen: '5 minutes ago',
+impact: 'High security risk',
+affected: '12 services',
+severity: 'CRITICAL',
+type: 'ONGOING',
+autoFix: 'AVAILABLE'
+}
+]);
+
+const [liveActivity] = React.useState([
+{ time: '09:11:32', event: 'Drift detected in kubernetes-cluster-02', type: 'detection', icon: '⚠️' },
+{ time: '09:11:27', event: 'Drift detected in kubernetes-cluster-02', type: 'detection', icon: '⚠️' },
+{ time: '09:11:22', event: 'Configuration validated for prod-api-gateway', type: 'validation', icon: '✅' },
+{ time: '09:11:17', event: 'Auto-remediation completed for db-replica-01', type: 'remediation', icon: '🔧' },
+{ time: '09:11:02', event: 'Critical security drift in payment-gateway', type: 'critical', icon: '🚨' }
+]);
+
+// Backend configuration
+const [backendConfig, setBackendConfig] = React.useState({
+primaryEndpoint: '10.0.1.45:8443',
+secondaryEndpoint: '10.0.1.46:8443',
+analysisEngine: '10.0.2.100:9090',
+alertManager: '10.0.2.101:9093',
+autoRemediation: true,
+realTimeMonitoring: true,
+emergencyShutoff: false,
+aiModelsActive: true,
+enterpriseFeaturesUnlocked: true,
+dataSourcesConnected: 52847,
+totalConfigsMonitored: 847293,
+realTimeStreams: 156,
+mlModelsDeployed: 23
+});
+
+const tabs = [
+{ id: 'drift-analysis', label: 'drift-analysis.py', premium: false },
+{ id: 'data-sources', label: 'data-sources.json', premium: false },
+{ id: 'predictions', label: 'predictions.ml', premium: true },
+{ id: 'backend-magic', label: 'backend-magic.ai', premium: true },
+{ id: 'model-training', label: 'model-training.ipynb', premium: true }
+];
+
+// Simulate real-time updates
+React.useEffect(() => {
+const interval = setInterval(() => {
+if (isAnalyzing && liveMode && isLoggedIn) {
+setMetrics(prev => ({
+...prev,
+scanRate: prev.scanRate + Math.floor(Math.random() * 100) - 50,
+detectionLatency: Math.max(0.1, prev.detectionLatency + (Math.random() * 0.5) - 0.25),
+configsPerSec: prev.configsPerSec + Math.floor(Math.random() * 200) - 100,
+anomalyScore: Math.max(0, Math.min(10, prev.anomalyScore + (Math.random() * 0.6) - 0.3)),
+preventedLoss: prev.preventedLoss + Math.random() * 0.2
+}));
+}
+}, 3000);
+
+return () => clearInterval(interval);
+}, [isAnalyzing, liveMode, isLoggedIn]);
+
+const handleLogin = (e) => {
+e.preventDefault();
+if (loginData.username && loginData.password) {
+setIsLoggedIn(true);
+if (loginData.username === 'founder' || founderAccess) {
+setUserRole('founder');
+setBackendConfig(prev => ({...prev, enterpriseFeaturesUnlocked: true, founderMode: true}));
+} else {
+setUserRole(loginData.username === 'admin' ? 'admin' : 'user');
+}
+}
+};
+
+const handleFounderAccess = () => {
+setFounderAccess(true);
+setLoginData({username: 'founder', password: 'vip-access'});
+setTimeout(() => {
+setIsLoggedIn(true);
+setUserRole('founder');
+setBackendConfig(prev => ({...prev, enterpriseFeaturesUnlocked: true, founderMode: true}));
+}, 1000);
+};
+
+const handleLogout = () => {
+setIsLoggedIn(false);
+setLoginData({ username: '', password: '' });
+setActiveTab('drift-analysis');
+};
+
+const toggleAnalysis = () => {
+setIsAnalyzing(!isAnalyzing);
+};
+
+const toggleEmergency = () => {
+setEmergencyMode(!emergencyMode);
+if (!emergencyMode) {
+setSystemStatus('EMERGENCY');
+setIsAnalyzing(false);
+} else {
+setSystemStatus('OPERATIONAL');
+}
+};
+
+const handleAutoRemediate = (driftId, driftName) => {
+setRemediationInProgress(prev => ({...prev, [driftId]: true}));
+
+// Simulate remediation process
+setTimeout(() => {
+setRemediationInProgress(prev => ({...prev, [driftId]: false}));
+setRemediationComplete(prev => ({...prev, [driftId]: true}));
+
+// Update threat matrix
+setThreatMatrix(prev => ({
+...prev,
+resolved: prev.resolved + 1,
+critical: Math.max(0, prev.critical - (driftId.includes('0847') || driftId.includes('0848') ? 1 : 0)),
+warning: Math.max(0, prev.warning - (driftId.includes('1376') ? 1 : 0))
+}));
+
+// Update metrics
+setMetrics(prev => ({
+...prev,
+activeDrifts: Math.max(0, prev.activeDrifts - 1),
+preventedLoss: prev.preventedLoss + Math.random() * 5
+}));
+
+// Add to live activity
+const newActivity = {
+time: new Date().toLocaleTimeString('en-US', { hour12: false }).slice(0, 8),
+event: `Auto-remediation completed for ${driftName}`,
+type: 'remediation',
+icon: '✅'
+};
+
+// Show completion notification
+setTimeout(() => {
+setRemediationComplete(prev => ({...prev, [driftId]: false}));
+}, 3000);
+
+}, 2000 + Math.random() * 2000); // 2-4 seconds
+};
+
+const getSeverityColor = (severity) => {
+switch (severity) {
+case 'CRITICAL': return 'text-red-400';
+case 'WARNING': return 'text-yellow-400';
+default: return 'text-blue-400';
+}
+};
+
+const getSeverityBg = (severity) => {
+switch (severity) {
+case 'CRITICAL': return 'bg-red-500/20 border-red-500';
+case 'WARNING': return 'bg-yellow-500/20 border-yellow-500';
+default: return 'bg-blue-500/20 border-blue-500';
+}
+};
+
+// Login Screen
+if (!isLoggedIn) {
+return (
+<div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 flex items-center justify-center p-4">
+<div className="absolute inset-0 opacity-20" style={{
+backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+}}></div>
+
+<div className="bg-gray-800/80 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 w-full max-w-md shadow-2xl">
+<div className="text-center mb-8">
+<div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center text-black font-bold text-2xl mx-auto mb-4 shadow-lg">
+DF
+</div>
+<h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+DRIFTFORCE
+</h1>
+<p className="text-gray-400 mt-2">The Ultimate Data Drift & Prediction Platform</p>
+<div className="flex items-center justify-center space-x-2 mt-3">
+<div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+<span className="text-green-400 text-sm font-mono">SYSTEM OPERATIONAL</span>
+</div>
+</div>
+
+<form onSubmit={handleLogin} className="space-y-6">
+<div>
+<label className="block text-sm font-medium text-gray-300 mb-2">Username</label>
+<div className="relative">
+<span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">👤</span>
+<input
+type="text"
+value={loginData.username}
+onChange={(e) => setLoginData({...loginData, username: e.target.value})}
+className="w-full bg-gray-700/50 border border-gray-600 rounded-lg pl-10 pr-4 py-3 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all"
+placeholder="Enter username"
+required
+/>
+</div>
+</div>
+
+<div>
+<label className="block text-sm font-medium text-gray-300 mb-2">Password</label>
+<div className="relative">
+<span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">🔒</span>
+<input
+type={showPassword ? "text" : "password"}
+value={loginData.password}
+onChange={(e) => setLoginData({...loginData, password: e.target.value})}
+className="w-full bg-gray-700/50 border border-gray-600 rounded-lg pl-10 pr-12 py-3 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all"
+placeholder="Enter password"
+required
+/>
+<button
+type="button"
+onClick={() => setShowPassword(!showPassword)}
+className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-300"
+>
+{showPassword ? '🙈' : '👁️'}
+</button>
+</div>
+</div>
+
+<button
+type="submit"
+className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 shadow-lg"
+>
+ACCESS DRIFTFORCE
+</button>
+</form>
+
+<div className="mt-6 text-center">
+<p className="text-gray-500 text-sm mb-4">Demo Credentials: admin / password</p>
+
+{/* VIP ACCESS BUTTON */}
+<div className="relative">
+<button
+onClick={handleFounderAccess}
+className="group relative inline-flex items-center justify-center px-8 py-3 text-sm font-bold tracking-wider bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 text-black rounded-lg hover:from-amber-300 hover:via-yellow-400 hover:to-amber-500 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-amber-500/50"
+>
+<span className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-yellow-500/20 rounded-lg blur-lg"></span>
+<span className="relative flex items-center space-x-3">
+<span className="w-2 h-2 bg-black rounded-full animate-pulse"></span>
+<span className="font-black">VIP ACCESS</span>
+<span className="w-2 h-2 bg-black rounded-full animate-pulse"></span>
+</span>
+</button>
+
+{founderAccess && (
+<div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-amber-400 text-xs font-bold animate-bounce">
+VIP MODE ACTIVATED
+</div>
+)}
+</div>
+</div>
+</div>
+</div>
+);
+}
+
+const renderTabContent = () => {
+switch (activeTab) {
+case 'drift-analysis':
+return (
+<div className="h-full overflow-y-auto">
+<div className="flex items-center justify-between mb-6">
+<div>
+<div className="text-green-400 mb-2 font-mono text-sm flex items-center">
+<span className="text-purple-400"># </span>DRIFT DETECTION ENGINE V3.2.1 - ANALYZING DATA PATTERNS
+<div className="ml-4 flex items-center space-x-2">
+<div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+<span className="text-green-400 text-xs">ANALYZING</span>
+</div>
+</div>
+<p className="text-gray-400 text-sm">2 active threats • $137K/hr at risk</p>
+</div>
+<div className="flex space-x-2">
+<button className="px-4 py-2 bg-cyan-500/20 border border-cyan-500 text-cyan-400 rounded-lg text-sm font-bold hover:bg-cyan-500/30 transition-all">
+ALL
+</button>
+<button className="px-4 py-2 bg-gray-700 text-gray-400 rounded-lg text-sm hover:bg-gray-600 transition-all">
+CRITICAL
+</button>
+<button className="px-4 py-2 bg-gray-700 text-gray-400 rounded-lg text-sm hover:bg-gray-600 transition-all">
+WARNING
+</button>
+</div>
+</div>
+
+<div className="space-y-6">
+{driftAnalysis.map((drift) => (
+<div
+key={drift.id}
+className={`${getSeverityBg(drift.severity)} border rounded-2xl p-6 font-mono text-sm transition-all duration-300 group cursor-pointer backdrop-blur-sm bg-opacity-80 hover:bg-opacity-100 hover:shadow-2xl hover:scale-[1.02] ${
+selectedDrift === drift.id ? 'ring-2 ring-cyan-400 shadow-cyan-400/25' : ''
+} ${
+remediationComplete[drift.id] ? 'border-green-500 bg-green-500/20' : ''
+}`}
+onClick={() => setSelectedDrift(selectedDrift === drift.id ? null : drift.id)}
+>
+<div className="flex items-center justify-between mb-4">
+<div className="flex items-center space-x-3">
+<span className="text-blue-400 font-semibold">class</span>
+<span className="text-yellow-400 font-bold text-lg">{drift.name}</span>
+<span className="text-gray-400">:</span>
+<span className={`${getSeverityColor(drift.severity)} px-3 py-1 rounded-lg bg-gray-800/60 text-xs font-bold backdrop-blur-sm`}>
+{remediationComplete[drift.id] ? 'RESOLVED' : drift.severity}
+</span>
+{drift.autoFix === 'AVAILABLE' && !remediationComplete[drift.id] && (
+<span className="px-3 py-1 rounded-lg bg-blue-500/30 text-blue-300 text-xs font-bold border border-blue-400/40 backdrop-blur-sm animate-pulse">
+AUTO-FIX READY
+</span>
+)}
+{remediationComplete[drift.id] && (
+<span className="px-3 py-1 rounded-lg bg-green-500/30 text-green-300 text-xs font-bold border border-green-400/40 backdrop-blur-sm">
+✅ REMEDIATED
+</span>
+)}
+</div>
+<div className="flex items-center space-x-3">
+{drift.autoFix === 'AVAILABLE' && !remediationComplete[drift.id] && (
+<button
+onClick={(e) => {
+e.stopPropagation();
+handleAutoRemediate(drift.id, drift.name);
+}}
+disabled={remediationInProgress[drift.id]}
+className={`px-4 py-2 rounded-lg text-xs font-bold transition-all duration-300 backdrop-blur-sm ${
+remediationInProgress[drift.id]
+? 'bg-yellow-500/30 text-yellow-300 border border-yellow-400/40 animate-pulse cursor-not-allowed'
+: 'bg-green-500/80 hover:bg-green-500 text-white border border-green-400/60 hover:shadow-lg hover:shadow-green-400/25 transform hover:scale-105'
+}`}
+>
+{remediationInProgress[drift.id] ? (
+<span className="flex items-center space-x-2">
+<span>🔧</span>
+<span>REMEDIATING...</span>
+</span>
+) : (
+'REMEDIATE NOW'
+)}
+</button>
+)}
+<div className="text-gray-500 text-xs bg-gray-800/40 px-2 py-1 rounded backdrop-blur-sm">{drift.id}</div>
+</div>
+</div>
+
+<div className="text-gray-300 mb-4 bg-gray-800/30 p-3 rounded-lg backdrop-blur-sm">
+<span className="text-purple-400">description = </span>
+<span className="text-green-400">"{drift.description}"</span>
+</div>
+
+<div className="grid grid-cols-4 gap-4 text-xs">
+<div className="bg-gray-800/40 p-3 rounded-lg backdrop-blur-sm">
+<span className="text-purple-400 block mb-1">service:</span>
+<span className="text-cyan-400 font-semibold">"{drift.service}"</span>
+</div>
+<div className="bg-gray-800/40 p-3 rounded-lg backdrop-blur-sm">
+<span className="text-purple-400 block mb-1">first_seen:</span>
+<span className="text-cyan-400 font-semibold">"{drift.firstSeen}"</span>
+</div>
+<div className="bg-gray-800/40 p-3 rounded-lg backdrop-blur-sm">
+<span className="text-purple-400 block mb-1">impact:</span>
+<span className="text-orange-400 font-semibold">"{drift.impact}"</span>
+</div>
+<div className="bg-gray-800/40 p-3 rounded-lg backdrop-blur-sm">
+<span className="text-purple-400 block mb-1">affected:</span>
+<span className="text-cyan-400 font-semibold">"{drift.affected}"</span>
+</div>
+</div>
+
+{selectedDrift === drift.id && (
+<div className="mt-4 p-4 bg-gray-800/60 rounded-lg backdrop-blur-sm border border-gray-600/50 animate-in slide-in-from-top duration-300">
+<h4 className="text-cyan-400 font-bold mb-3">Detailed Analysis:</h4>
+<div className="grid grid-cols-2 gap-4 text-xs">
+<div>
+<span className="text-purple-400">risk_level:</span> <span className="text-red-400">"HIGH"</span>
+</div>
+<div>
+<span className="text-purple-400">remediation_time:</span> <span className="text-green-400">"2-4 seconds"</span>
+</div>
+<div>
+<span className="text-purple-400">automation_available:</span> <span className="text-blue-400">true</span>
+</div>
+<div>
+<span className="text-purple-400">manual_steps:</span> <span className="text-yellow-400">{Math.floor(Math.random() * 5) + 3}</span>
+</div>
+</div>
+</div>
+)}
+</div>
+))}
+</div>
+</div>
+);
+
+case 'data-sources':
+return (
+<div className="h-full overflow-y-auto font-mono text-sm">
+<div className="text-green-400 mb-4">
+<span className="text-purple-400"># </span>DATA SOURCES CONFIGURATION - THE ULTIMATE DATA ABOUT DATA
+</div>
+<div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700/50 backdrop-blur-sm">
+<pre className="text-gray-300">
+{`{
+"data_sources": {
+"kubernetes": {
+"clusters": 847,
+"nodes": 12043,
+"pods": 89471,
+"configs_monitored": ${metrics.resources.toLocaleString()}
+},
+"databases": {
+"postgresql": { "instances": 45, "drift_detected": 3 },
+"mongodb": { "instances": 23, "drift_detected": 1 },
+"redis": { "instances": 67, "drift_detected": 0 }
+},
+"apis": {
+"rest_endpoints": 1247,
+"graphql_schemas": 89,
+"grpc_services": 234
+},
+"real_time_metrics": {
+"scan_rate": "${metrics.scanRate}/sec",
+"accuracy": "${metrics.accuracy}%",
+"prevented_loss": "$${metrics.preventedLoss.toFixed(1)}M",
+"ai_models_active": ${backendConfig.aiModelsActive},
+"enterprise_features": ${backendConfig.enterpriseFeaturesUnlocked}
+}
+}
+}`}
+</pre>
+</div>
+</div>
+);
+
+case 'predictions':
+return (
+<div className="h-full overflow-y-auto font-mono text-sm">
+<div className="flex items-center justify-between mb-4">
+<div className="text-green-400">
+<span className="text-purple-400"># </span>ML PREDICTION ENGINE - DRIFT PREDICTION ALGORITHM
+</div>
+<div className="flex items-center space-x-2">
+<div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+<span className="text-purple-400 text-xs font-bold">AI MODELS ACTIVE</span>
+</div>
+</div>
+<div className="space-y-6">
+<div className="bg-gradient-to-r from-purple-900/30 to-blue-900/30 p-6 rounded-xl border border-purple-500/30 backdrop-blur-sm">
+<div className="text-cyan-400 mb-4 text-lg font-bold">model.predict_drift_probability()</div>
+<div className="grid grid-cols-3 gap-6">
+<div className="text-center bg-gray-800/50 p-4 rounded-lg">
+<div className="text-3xl text-red-400 font-bold">{(metrics.anomalyScore * 11.2).toFixed(1)}%</div>
+<div className="text-gray-400 text-xs mt-1">CRITICAL RISK</div>
+</div>
+<div className="text-center bg-gray-800/50 p-4 rounded-lg">
+<div className="text-3xl text-yellow-400 font-bold">{(metrics.anomalyScore * 7.8).toFixed(1)}%</div>
+<div className="text-gray-400 text-xs mt-1">WARNING RISK</div>
+</div>
+<div className="text-center bg-gray-800/50 p-4 rounded-lg">
+<div className="text-3xl text-green-400 font-bold">{(100 - metrics.anomalyScore * 19).toFixed(1)}%</div>
+<div className="text-gray-400 text-xs mt-1">STABLE</div>
+</div>
+</div>
+</div>
+<div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700/50 backdrop-blur-sm">
+<div className="text-purple-400 mb-3 font-bold">Neural Network Analysis:</div>
+<pre className="text-gray-300 text-xs">
+{`Layer 1: [${Array(8).fill().map(() => Math.random().toFixed(3)).join(', ')}]
+Layer 2: [${Array(6).fill().map(() => Math.random().toFixed(3)).join(', ')}]
+Output: [drift_probability: ${(metrics.anomalyScore/10).toFixed(3)}]
+Status: ENTERPRISE_AI_MODELS_ACTIVE`}
+</pre>
+</div>
+</div>
+</div>
+);
+
+case 'backend-magic':
+return (
+<div className="h-full overflow-y-auto">
+<div className="text-center mb-8">
+<h2 className="text-4xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent mb-3">
+⚡ OUR MAGIC AT WORK ⚡
+</h2>
+<p className="text-cyan-400 font-mono text-lg">Backend Infrastructure & Real-Time Processing Engine</p>
+<p className="text-purple-400 text-sm font-bold mt-2">THE ULTIMATE DATA DRIFT & PREDICTION PRODUCT</p>
+<div className="flex items-center justify-center space-x-2 mt-4">
+<span>🎯</span>
+<span className="text-green-400 text-sm font-bold">🔓 Unlock Enterprise Features</span>
+<span className="text-yellow-400 text-xs px-2 py-1 bg-yellow-400/20 rounded">ACTIVATED</span>
+{userRole === 'founder' && (
+<span className="text-amber-400 text-xs px-3 py-1 bg-gradient-to-r from-amber-400/20 to-yellow-500/20 rounded border border-amber-400/50 animate-pulse font-bold">
+VIP MODE
+</span>
+)}
+</div>
+</div>
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div className="bg-gradient-to-br from-cyan-900/30 to-blue-900/30 p-6 rounded-xl border border-cyan-400/50 font-mono backdrop-blur-sm">
+<h3 className="text-cyan-400 font-bold mb-4 flex items-center text-lg">
+<span className="mr-3">🔌</span>
+CORE ENDPOINTS
+</h3>
+<div className="space-y-3 text-sm">
+<div className="flex justify-between items-center bg-gray-800/50 p-3 rounded-lg">
+<span className="text-purple-400">primary_endpoint:</span>
+<span className="text-green-400 font-bold">"{backendConfig.primaryEndpoint}"</span>
+</div>
+<div className="flex justify-between items-center bg-gray-800/50 p-3 rounded-lg">
+<span className="text-purple-400">secondary_endpoint:</span>
+<span className="text-green-400 font-bold">"{backendConfig.secondaryEndpoint}"</span>
+</div>
+<div className="flex justify-between items-center bg-gray-800/50 p-3 rounded-lg">
+<span className="text-purple-400">analysis_engine:</span>
+<span className="text-green-400 font-bold">"{backendConfig.analysisEngine}"</span>
+</div>
+<div className="flex justify-between items-center bg-gray-800/50 p-3 rounded-lg">
+<span className="text-purple-400">alert_manager:</span>
+<span className="text-green-400 font-bold">"{backendConfig.alertManager}"</span>
+</div>
+</div>
+</div>
+
+<div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/30 p-6 rounded-xl border border-yellow-400/50 font-mono backdrop-blur-sm">
+<h3 className="text-yellow-400 font-bold mb-4 flex items-center text-lg">
+<span className="mr-3">⚙️</span>
+AI PROCESSING TOGGLES
+</h3>
+<div className="space-y-4">
+<label className="flex items-center justify-between bg-gray-800/50 p-3 rounded-lg">
+<span className="text-sm text-purple-400 font-bold">auto_remediation =</span>
+<button
+onClick={() => setBackendConfig(prev => ({...prev, autoRemediation: !prev.autoRemediation}))}
+className={`w-14 h-7 rounded-full transition-all duration-300 ${backendConfig.autoRemediation ? 'bg-gradient-to-r from-green-400 to-green-500 shadow-lg' : 'bg-gray-600'}`}
+>
+<div className={`w-6 h-6 bg-white rounded-full transition-transform duration-300 ${backendConfig.autoRemediation ? 'translate-x-7 shadow-lg' : 'translate-x-1'}`}></div>
+</button>
+</label>
+<label className="flex items-center justify-between bg-gray-800/50 p-3 rounded-lg">
+<span className="text-sm text-purple-400 font-bold">real_time_monitor =</span>
+<button
+onClick={() => setBackendConfig(prev => ({...prev, realTimeMonitoring: !prev.realTimeMonitoring}))}
+className={`w-14 h-7 rounded-full transition-all duration-300 ${backendConfig.realTimeMonitoring ? 'bg-gradient-to-r from-green-400 to-green-500 shadow-lg' : 'bg-gray-600'}`}
+>
+<div className={`w-6 h-6 bg-white rounded-full transition-transform duration-300 ${backendConfig.realTimeMonitoring ? 'translate-x-7 shadow-lg' : 'translate-x-1'}`}></div>
+</button>
+</label>
+<label className="flex items-center justify-between bg-gray-800/50 p-3 rounded-lg">
+<span className="text-sm text-purple-400 font-bold">ai_models_active =</span>
+<button
+onClick={() => setBackendConfig(prev => ({...prev, aiModelsActive: !prev.aiModelsActive}))}
+className={`w-14 h-7 rounded-full transition-all duration-300 ${backendConfig.aiModelsActive ? 'bg-gradient-to-r from-purple-400 to-purple-500 shadow-lg' : 'bg-gray-600'}`}
+>
+<div className={`w-6 h-6 bg-white rounded-full transition-transform duration-300 ${backendConfig.aiModelsActive ? 'translate-x-7 shadow-lg' : 'translate-x-1'}`}></div>
+</button>
+</label>
+<label className="flex items-center justify-between bg-gray-800/50 p-3 rounded-lg">
+<span className="text-sm text-purple-400 font-bold">enterprise_features =</span>
+<button
+onClick={() => setBackendConfig(prev => ({...prev, enterpriseFeaturesUnlocked: !prev.enterpriseFeaturesUnlocked}))}
+className={`w-14 h-7 rounded-full transition-all duration-300 ${backendConfig.enterpriseFeaturesUnlocked ? 'bg-gradient-to-r from-amber-400 to-amber-500 shadow-lg' : 'bg-gray-600'}`}
+>
+<div className={`w-6 h-6 bg-white rounded-full transition-transform duration-300 ${backendConfig.enterpriseFeaturesUnlocked ? 'translate-x-7 shadow-lg' : 'translate-x-1'}`}></div>
+</button>
+</label>
+</div>
+</div>
+</div>
+
+<div className="mt-8 bg-gradient-to-r from-purple-900/50 to-blue-900/50 p-6 rounded-xl border border-purple-400/50 backdrop-blur-sm">
+<h3 className="text-purple-400 font-bold mb-4 flex items-center font-mono text-lg">
+<span className="mr-3">🚀</span>
+SYSTEM CONTROL COMMANDS
+</h3>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+<button
+onClick={toggleAnalysis}
+className={`py-4 px-6 rounded-xl font-mono flex items-center justify-center space-x-3 transition-all duration-300 shadow-lg ${isAnalyzing ? 'bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 transform hover:scale-105' : 'bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 transform hover:scale-105'}`}
+>
+<span>{isAnalyzing ? '⏸️' : '▶️'}</span>
+<span className="font-bold">{isAnalyzing ? 'system.pause()' : 'system.start()'}</span>
+</button>
+<button className="py-4 px-6 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 font-mono flex items-center justify-center space-x-3 transition-all duration-300 shadow-lg transform hover:scale-105">
+<span>🔄</span>
+<span className="font-bold">system.refresh()</span>
+</button>
+<button
+onClick={toggleEmergency}
+className={`py-4 px-6 rounded-xl font-mono flex items-center justify-center space-x-3 transition-all duration-300 shadow-lg transform hover:scale-105 ${emergencyMode ? 'bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700' : 'bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700'}`}
+>
+<span>⚠️</span>
+<span className="font-bold">{emergencyMode ? 'emergency.off()' : 'emergency.on()'}</span>
+</button>
+</div>
+</div>
+</div>
+);
+
+case 'model-training':
+return (
+<div className="h-full overflow-y-auto font-mono text-sm">
+<div className="text-green-400 mb-4">
+<span className="text-purple-400"># </span>JUPYTER NOTEBOOK - MODEL TRAINING PIPELINE
+</div>
+<div className="space-y-4">
+<div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700/50 backdrop-blur-sm">
+<div className="text-blue-400 mb-2">[1]: import tensorflow as tf, numpy as np</div>
+<div className="text-gray-400 text-xs mb-2">In [1]:</div>
+<pre className="text-gray-300">
+{`# Data Drift Detection Neural Network - Enterprise Edition
+model = tf.keras.Sequential([
+tf.keras.layers.Dense(256, activation='relu'),
+tf.keras.layers.BatchNormalization(),
+tf.keras.layers.Dropout(0.3),
+tf.keras.layers.Dense(128, activation='relu'),
+tf.keras.layers.Dropout(0.2),
+tf.keras.layers.Dense(64, activation='relu'),
+tf.keras.layers.Dense(1, activation='sigmoid')
+])
+
+model.compile(optimizer='adam',
+loss='binary_crossentropy',
+metrics=['accuracy', 'precision', 'recall'])`}
+</pre>
+</div>
+
+<div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700/50 backdrop-blur-sm">
+<div className="text-blue-400 mb-2">[2]: Training Results - Enterprise AI Model</div>
+<div className="text-gray-400 text-xs mb-2">Out [2]:</div>
+<pre className="text-green-400">
+{`Epoch 500/500
+${Math.floor(Math.random() * 2000) + 1500}/${Math.floor(Math.random() * 2000) + 1500} [==============================]
+- 1s 2ms/step
+- loss: 0.0089
+- accuracy: ${metrics.accuracy/100}
+- precision: 0.9989
+- recall: 0.9994
+- val_loss: 0.0067
+- val_accuracy: 0.9998
+
+🎯 ENTERPRISE MODEL TRAINING COMPLETE
+Model saved to: driftforce_enterprise_v3.2.1.h5
+Performance: TOP 1% ACCURACY ACHIEVED`}
+</pre>
+</div>
+</div>
+</div>
+);
+
+default:
+return <div>Select a tab</div>;
+}
+};
+
+return (
+<div className="min-h-screen bg-gray-900 text-white font-mono flex flex-col">
+{/* Premium VS Code Style Header */}
+<div className="bg-gradient-to-r from-gray-800 to-gray-900 border-b border-gray-700/50 p-3 shadow-lg">
+<div className="flex items-center justify-between">
+<div className="flex items-center space-x-4">
+<div className="flex items-center space-x-3">
+<div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center text-black font-bold text-lg shadow-lg">
+DF
+</div>
+<div>
+<h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+DRIFTFORCE
+</h1>
+<div className="flex items-center space-x-2">
+<div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+<span className="text-green-400 text-xs font-bold">SYSTEM {systemStatus}</span>
+</div>
+</div>
+</div>
+</div>
+
+<div className="flex items-center space-x-6 text-xs">
+<div className="text-center bg-gray-700/50 p-2 rounded-lg">
+<div className="text-gray-400">SCAN</div>
+<div className="text-cyan-400 font-bold">{metrics.scanRate.toLocaleString()}/s</div>
+</div>
+<div className="text-center bg-gray-700/50 p-2 rounded-lg">
+<div className="text-gray-400">LATENCY</div>
+<div className="text-cyan-400 font-bold">{metrics.detectionLatency.toFixed(1)}ms</div>
+</div>
+<div className="text-center bg-gray-700/50 p-2 rounded-lg">
+<div className="text-gray-400">RESOURCES</div>
+<div className="text-cyan-400 font-bold">{metrics.resources.toLocaleString()}</div>
+</div>
+<div className="text-center bg-gray-700/50 p-2 rounded-lg">
+<div className="text-gray-400">DRIFTS</div>
+<div className="text-cyan-400 font-bold">{metrics.activeDrifts}</div>
+</div>
+</div>
+
+<div className="flex items-center space-x-3">
+<button
+onClick={() => setLiveMode(!liveMode)}
+className={`px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 ${liveMode ? 'bg-gradient-to-r from-cyan-400 to-blue-500 text-black shadow-lg' : 'bg-gray-600 text-white hover:bg-gray-500'}`}
+>
+{liveMode ? '● LIVE' : 'DEMO'}
+</button>
+<button
+onClick={toggleEmergency}
+className={`px-4 py-2 rounded-lg border-2 text-sm font-bold transition-all duration-300 ${emergencyMode ? 'border-red-500 text-red-500 bg-red-500/20 shadow-red-500/50 shadow-lg' : 'border-red-500 text-red-500 hover:bg-red-500/10'}`}
+>
+EMERGENCY
+</button>
+<div className="flex items-center space-x-2">
+<span>🔔</span>
+<span className="text-yellow-400 text-sm font-bold">{notifications}</span>
+</div>
+<button
+onClick={handleLogout}
+className="flex items-center space-x-2 px-3 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition-all"
+>
+<span>👤</span>
+<span className={userRole === 'founder' ? 'text-amber-400 font-bold' : ''}>{userRole === 'founder' ? 'VIP' : userRole}</span>
+<span>🚪</span>
+</button>
+</div>
+</div>
+</div>
+
+{/* Premium Tab Bar */}
+<div className="bg-gray-800 border-b border-gray-700/50">
+<div className="flex">
+{tabs.map((tab) => (
+<button
+key={tab.id}
+onClick={() => setActiveTab(tab.id)}
+className={`px-6 py-3 text-sm flex items-center space-x-3 border-r border-gray-700/50 transition-all duration-300 ${
+activeTab === tab.id
+? 'bg-gray-900 text-white border-b-2 border-cyan-400 shadow-lg'
+: 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-750'
+}`}
+>
+<span>{tab.id === 'drift-analysis' ? '📊' : tab.id === 'data-sources' ? '🗄️' : tab.id === 'predictions' ? '🔮' : tab.id === 'backend-magic' ? '⚡' : '📓'}</span>
+<span className="font-medium">{tab.label}</span>
+{tab.premium && (
+<span className="text-yellow-400 text-xs px-1 py-0.5 bg-yellow-400/20 rounded">PRO</span>
+)}
+{activeTab === tab.id && tab.id === 'backend-magic' && (
+<span className="text-yellow-400 text-xs animate-pulse">⚡</span>
+)}
+</button>
+))}
+</div>
+</div>
+
+{/* Main Content Area */}
+<div className="flex-1 flex">
+{/* Main Editor Area */}
+<div className="flex-1 p-6 bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-xl">
+{renderTabContent()}
+</div>
+
+{/* Premium Right Sidebar */}
+<div className="w-96 bg-gradient-to-b from-gray-800/95 to-gray-900/95 border-l border-gray-700/50 p-6 backdrop-blur-xl shadow-2xl">
+{/* Real-time Metrics */}
+<div className="mb-8">
+<h3 className="text-sm font-bold text-gray-300 mb-4 flex items-center">
+<span className="mr-2">📈</span>
+REAL-TIME METRICS
+</h3>
+<div className="grid grid-cols-2 gap-3 text-xs">
+<div className="bg-gradient-to-br from-cyan-900/50 to-blue-900/50 p-4 rounded-xl border border-cyan-500/30 backdrop-blur-sm hover:bg-opacity-80 transition-all duration-300 cursor-pointer hover:scale-105">
+<div className="text-cyan-400 font-bold text-lg">{metrics.configsPerSec.toLocaleString()}</div>
+<div className="text-gray-400">configs/sec</div>
+</div>
+<div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 p-4 rounded-xl border border-purple-500/30 backdrop-blur-sm hover:bg-opacity-80 transition-all duration-300 cursor-pointer hover:scale-105">
+<div className="text-purple-400 font-bold text-lg">{metrics.anomalyScore.toFixed(1)}</div>
+<div className="text-gray-400">anomaly</div>
+</div>
+<div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 p-4 rounded-xl border border-green-500/30 backdrop-blur-sm hover:bg-opacity-80 transition-all duration-300 cursor-pointer hover:scale-105">
+<div className="text-green-400 font-bold text-lg">${metrics.preventedLoss.toFixed(1)}M</div>
+<div className="text-gray-400">prevented</div>
+</div>
+<div className="bg-gradient-to-br from-yellow-900/50 to-orange-900/50 p-4 rounded-xl border border-yellow-500/30 backdrop-blur-sm hover:bg-opacity-80 transition-all duration-300 cursor-pointer hover:scale-105">
+<div className="text-yellow-400 font-bold text-lg">{metrics.accuracy}%</div>
+<div className="text-gray-400">accuracy</div>
+</div>
+</div>
+</div>
+
+{/* Threat Matrix */}
+<div className="mb-8">
+<h3 className="text-sm font-bold text-gray-300 mb-4 flex items-center">
+<span className="mr-2">🛡️</span>
+THREAT MATRIX
+</h3>
+<div className="grid grid-cols-2 gap-3 text-xs">
+<div className="bg-gradient-to-br from-red-900/50 to-red-800/50 p-4 rounded-xl text-center border border-red-500/30 backdrop-blur-sm hover:bg-opacity-80 transition-all duration-300 cursor-pointer hover:scale-105">
+<div className="text-3xl text-red-400 font-bold">{threatMatrix.critical}</div>
+<div className="text-gray-400 font-medium">CRITICAL</div>
+</div>
+<div className="bg-gradient-to-br from-yellow-900/50 to-yellow-800/50 p-4 rounded-xl text-center border border-yellow-500/30 backdrop-blur-sm hover:bg-opacity-80 transition-all duration-300 cursor-pointer hover:scale-105">
+<div className="text-3xl text-yellow-400 font-bold">{threatMatrix.warning}</div>
+<div className="text-gray-400 font-medium">WARNING</div>
+</div>
+<div className="bg-gradient-to-br from-green-900/50 to-green-800/50 p-4 rounded-xl text-center border border-green-500/30 backdrop-blur-sm hover:bg-opacity-80 transition-all duration-300 cursor-pointer hover:scale-105">
+<div className="text-3xl text-green-400 font-bold">{threatMatrix.resolved}</div>
+<div className="text-gray-400 font-medium">RESOLVED</div>
+</div>
+<div className="bg-gradient-to-br from-cyan-900/50 to-cyan-800/50 p-4 rounded-xl text-center border border-cyan-500/30 backdrop-blur-sm hover:bg-opacity-80 transition-all duration-300 cursor-pointer hover:scale-105">
+<div className="text-3xl text-cyan-400 font-bold">{threatMatrix.scanning.toLocaleString()}</div>
+<div className="text-gray-400 font-medium">SCANNING</div>
+</div>
+</div>
+</div>
+
+{/* Live Activity Terminal */}
+<div>
+<h3 className="text-sm font-bold text-gray-300 mb-4 flex items-center">
+<span className="mr-2">📟</span>
+LIVE ACTIVITY
+</h3>
+<div className="bg-gray-900/70 border border-gray-700/50 p-4 rounded-xl max-h-72 overflow-y-auto font-mono backdrop-blur-sm">
+<div className="space-y-3">
+{liveActivity.map((activity, index) => (
+<div key={index} className="flex items-start space-x-3 text-xs hover:bg-gray-800/50 p-2 rounded-lg transition-all duration-200 cursor-pointer">
+<div className="text-gray-500 w-16 font-mono">{activity.time}</div>
+<div className="text-lg">{activity.icon}</div>
+<div className="flex-1 text-gray-300">{activity.event}</div>
+</div>
+))}
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{/* Premium Status Bar */}
+<div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs px-6 py-2 flex items-center justify-between shadow-lg">
+<div className="flex items-center space-x-6">
+<span className="flex items-center space-x-1">
+<span>🚀</span>
+<span className="font-bold">DriftForce Enterprise v3.2.1</span>
+</span>
+<span className="flex items-center space-x-1">
+{isAnalyzing ? <span>⚡</span> : <span>⏸️</span>}
+<span className="font-medium">{isAnalyzing ? 'ANALYZING' : 'PAUSED'}</span>
+</span>
+<span className="flex items-center space-x-1">
+<span>📊</span>
+<span>{metrics.resources.toLocaleString()} resources monitored</span>
+</span>
+<span className="flex items-center space-x-1">
+<span>🧠</span>
+<span>AI Models: {backendConfig.aiModelsActive ? 'ACTIVE' : 'STANDBY'}</span>
+</span>
+</div>
+<div className="flex items-center space-x-6">
+<span>Drift Detection: {metrics.accuracy}%</span>
+<span>{userRole === 'founder' ? 'VIP LICENSE' : 'Enterprise License'}</span>
+<span>UTF-8</span>
+<span>AI/ML</span>
+{userRole === 'founder' && (
+<span className="text-amber-400 font-bold animate-pulse">VIP ACCESS</span>
+)}
+</div>
+</div>
+</div>
+);
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<DriftForce />);
+    </script>
+</body>
+</html>
